@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Document</title>
+    <script src='/popup.js'></script>
+    <link href='/popup.css' rel='stylesheet'></link>
+  </head>
+  <body>
+    <!-- Custom ad popup -->
+    <div id='ad_custom_popup' class='ad_custom_popup'>
+      <button
+        id='ad_custom_popup__cross'
+        class='ad_custom_popup__cross'
+        disabled
+      ></button>
+      <!-- ad block here -->
+     
+    </div>
+
+    <div id='ad_custom_popup-left' class='ad_custom_popup ad_custom_popup-left'>
+      <button
+        id='ad_custom_popup-left__cross'
+        class='ad_custom_popup__cross'
+        disabled
+      ></button>
+      <!-- ad block here -->
+    
+    </div>
+
+    <div id='ad_custom_popup-right' class='ad_custom_popup ad_custom_popup-right'>
+      <button
+        id='ad_custom_popup-right__cross'
+        class='ad_custom_popup__cross ad_custom_popup-right__cross'
+        disabled
+      ></button>
+      <!-- ad block here -->
+  
+    </div>
+    <!-- Custom ad popup -->
+    <!-- Custom ad popup -->
+    <script>
+      window.onload = () => {
+        initPopup({
+          id: 'ad_custom_popup',
+          crossId: 'ad_custom_popup__cross',
+          moreThan: 786,
+          lessThan: 1200,
+        });
+        initPopup({
+          id: 'ad_custom_popup-left',
+          crossId: 'ad_custom_popup-left__cross',
+          moreThan: 1200,
+        });
+        initPopup({
+          id: 'ad_custom_popup-right',
+          crossId: 'ad_custom_popup-right__cross',
+          moreThan: 1200,
+        });
+      }
+    </script>
+
+    <!-- Custom ad popup -->
+
+    <style>
+      .ad_custom_popup-left {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) translateX(-100%);
+      }
+
+      .ad_custom_popup-left__show {
+        display: block !important;
+        transition-delay: 0s, 0s;
+        opacity: 1;
+        transform: translateY(-50%) translateX(0%);
+      }
+
+      .ad_custom_popup-right {
+        top: 50%;
+        left: auto;
+        right: 0;
+        transform: translateY(-50%) translateX(100%);
+      }
+
+      .ad_custom_popup-right__show {
+        display: block !important;
+        transition-delay: 0s, 0s;
+        opacity: 1;
+        transform: translateY(-50%) translateX(0%);
+      }
+
+      .ad_custom_popup-right .ad_custom_popup__cross {
+        left: 0;
+      }
+    </style>
+  </body>
+</html>
