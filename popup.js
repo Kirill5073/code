@@ -1,4 +1,4 @@
-function initPopup({ id, crossId, time = 2, moreThan = 768, lessThan }) {
+function initPopup({ id, crossId, time = 3, moreThan = 768, lessThan }) {
   const modal = document.getElementById(id);
   const closeButton = document.getElementById(crossId);
 
@@ -17,10 +17,11 @@ function initPopup({ id, crossId, time = 2, moreThan = 768, lessThan }) {
     }, 1000);
   }
 
-  if (
+  const shouldShowPopup =
     (window.innerWidth >= moreThan && !lessThan) ||
-    (window.innerWidth >= moreThan && window.innerWidth < lessThan)
-  ) {
+    (window.innerWidth >= moreThan && window.innerWidth < lessThan);
+
+  if (shouldShowPopup) {
     setTimeout(() => {
       modal.classList.add(`${id}__show`);
       countDown();
